@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,59 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Posithive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7n-mG-AI1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPf-nf-VTu">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hm5-q2-8BG">
+                                        <rect key="frame" x="26" y="27" width="133" height="30"/>
+                                        <state key="normal" title="Login With NFC tag">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onLoginWithNFCTag:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m07-gk-ppY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="uPf-nf-VTu" firstAttribute="trailing" secondItem="d7n-mG-AI1" secondAttribute="trailing" id="D0m-a7-sDP"/>
+                                    <constraint firstItem="uPf-nf-VTu" firstAttribute="bottom" secondItem="d7n-mG-AI1" secondAttribute="bottom" id="E4o-YG-41u"/>
+                                    <constraint firstItem="uPf-nf-VTu" firstAttribute="leading" secondItem="d7n-mG-AI1" secondAttribute="leading" id="GU9-Jf-K2d"/>
+                                    <constraint firstItem="Hm5-q2-8BG" firstAttribute="top" secondItem="d7n-mG-AI1" secondAttribute="top" constant="27" id="LaO-2g-VdP"/>
+                                    <constraint firstItem="Hm5-q2-8BG" firstAttribute="leading" secondItem="d7n-mG-AI1" secondAttribute="leading" constant="26" id="P4S-mu-DRm"/>
+                                    <constraint firstItem="uPf-nf-VTu" firstAttribute="top" secondItem="d7n-mG-AI1" secondAttribute="top" id="u0e-jy-PJb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="d7n-mG-AI1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="GcA-VD-AmZ"/>
+                            <constraint firstItem="d7n-mG-AI1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="O4A-L2-hNQ"/>
+                            <constraint firstItem="d7n-mG-AI1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="u0e-75-3iC"/>
+                            <constraint firstItem="d7n-mG-AI1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vCv-N1-9Wk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="uPf-nf-VTu" id="Je3-hu-VRI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="139"/>
         </scene>
     </scenes>
 </document>
